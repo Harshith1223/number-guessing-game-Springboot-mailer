@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>🎉 You Did It!</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<script th:src="@{/js/script.js}" defer></script>
+</head>
+<body class="animated-bg" onload="playWin()">
+	<div class="container glass">
+		<h1>
+			🎉 Congratulations, <span th:text="${name}">Player</span>!
+		</h1>
+		<p>
+			🎯 You guessed the number in <strong th:text="${attempts}"></strong>
+			attempts.
+		</p>
+		<p>
+			🏆 Your Score: <strong th:text="${points}"></strong>
+		</p>
+		<p>
+			📬 Score sent to: <strong th:text="${email}"></strong>
+		</p>
+		<div class="emoji-burst">🎉</div>
+
+		<a href="/"><button>🔁 Restart</button></a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	font-family: 'Segoe UI', sans-serif;
+	background: linear-gradient(270deg, #00c6ff, #0072ff);
+	background-size: 400% 400%;
+	animation: moveBg 15s ease infinite;
+	color: #fff;
+}
+
+@
+keyframes moveBg { 0% {
+	background-position: 0% 50%;
+}
+
+50
+%
+{
+background-position
+:
+100%
+50%;
+}
+100
+%
+{
+background-position
+:
+0%
+50%;
+}
+}
+.container {
+	max-width: 500px;
+	margin: 10vh auto;
+	padding: 2rem;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	text-align: center;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+input {
+	padding: 0.75rem;
+	border: none;
+	border-radius: 10px;
+	width: 90%;
+	margin: 0.5rem 0;
+}
+
+button {
+	background-color: #ff4081;
+	color: white;
+	padding: 0.75rem 1.5rem;
+	border: none;
+	border-radius: 10px;
+	font-size: 1rem;
+	margin-top: 1rem;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #e91e63;
+}
+
+@
+keyframes floatEmoji { 0% {
+	transform: translateY(0) rotate(0);
+}
+
+100
+%
+{
+transform
+:
+translateY(
+-200px
+)
+rotate(
+360deg
+);
+}
+}
+.emoji-burst {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	font-size: 2rem;
+	animation: floatEmoji 2s ease-out forwards;
+}

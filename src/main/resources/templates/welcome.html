@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>🎯 Welcome | Number Guessing Game</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<script th:src="@{/js/script.js}" defer></script>
+</head>
+<body class="animated-bg">
+	<div class="container glass">
+		<h1>
+			🎮 Welcome to <span class="highlight">Number Guessing Game</span>
+		</h1>
+		<form action="/start" method="post" class="game-form">
+			<label>🧑 Your Name:</label> <input type="text" name="name" required
+				placeholder="Enter your name" /> <label>📧 Email:</label> <input
+				type="email" name="email" required placeholder="Enter your email" />
+
+			<button type="submit" onclick="playClick()">🚀 Start Game</button>
+		</form>
+	</div>
+</body>
+</html>
