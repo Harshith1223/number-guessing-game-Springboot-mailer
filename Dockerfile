@@ -1,17 +1,13 @@
-# Use a small Java 17 base image
-FROM eclipse-temurin:17-jdk-alpine
-
-# Set the working directory in the container
+# 1. Use Maven image to build the jar
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
-
-# Copy everything to /app
 COPY . .
+RUN mvn clean package -DskipTests
 
-# Give permission to mvnw (only if not already done)
-RUN chmod +x ./mvnw
+# 2. Use JDK image to run the app
+FROM eclipse-temurin:17-jdk
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 
-# Build the application
-RUN ./mvnw clean package -DskipTests
-
-# Run the app
-CMD ["java", "-jar", "target/*.jar"]
+# 3. Run the app
+ENTRYPOINT ["java", "-jar", "app.jar"]
